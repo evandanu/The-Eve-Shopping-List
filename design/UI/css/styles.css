@@ -1,0 +1,89 @@
+body {
+    background-image: url(../images/bag4.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    background-position: relative;
+    background-attachment: fixed;
+  
+}
+
+h1 {
+	text-align: center;
+	font-family: courier;
+	font-size: 80px;
+
+}
+
+.btn-group button {
+    background-color: #ffffff;
+    opacity: .4;
+    border: 100px #CD853F; 
+    color: black; 
+    padding: 10px; 
+    cursor: pointer; 
+    width: 50%; 
+    display: block; 
+    margin: auto;
+    font-size: 100px;
+    font-family: courier;
+
+}
+
+
+.btn-group button:hover {
+    background-color: 	#CD853F;
+}
+
+.footer{
+	position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.btn-group2 button {
+    background-color: #ffffff;
+    opacity: .4;
+    border: 100px #CD853F; 
+    color: black; 
+    padding: 0px; 
+    cursor: pointer; 
+    width: 40%; 
+    display: block; 
+    margin: auto;
+    font-size: 50px;
+    font-family: courier;
+
+}
+
+.btn-group2 button:hover {
+    background-color: 	#CD853F;
+}
+
+.login{
+	background-color: #ffffff;
+    opacity: .4;
+    border: 100px #CD853F; 
+    color: black; 
+    padding: 0px; 
+    cursor: pointer; 
+    width: 40%; 
+    display: block; 
+    margin: auto;
+    font-size: 50px;
+    font-family: courier;
+
+}
+
+.register{
+	background-color: #ffffff;
+    opacity: .4;
+    border: 100px #CD853F; 
+    color: black; 
+    padding: 0px; 
+    cursor: pointer; 
+    width: 40%; 
+    display: block; 
+    margin: auto;
+    font-size: 50px;
+    font-family: courier;
+
+}
