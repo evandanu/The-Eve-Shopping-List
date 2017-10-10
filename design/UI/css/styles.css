@@ -1,4 +1,7 @@
 body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
     background-image: url(../images/bag4.jpeg);
     background-repeat: no-repeat;
     background-size: 100% 100vh;
@@ -6,7 +9,6 @@ body {
     background-attachment: fixed;
     text-align: center;
     max-width: 100%;
-    box-sizing: border-box;
   
 }
 
@@ -14,6 +16,7 @@ h1 {
 	text-align: center;
 	font-family: courier;
 	font-size: 80px;
+    box-sizing: border-box;
 
 }
 
@@ -138,6 +141,7 @@ h1 {
 input {
     width: 40%;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 input,
