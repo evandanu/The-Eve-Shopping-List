@@ -31,5 +31,3 @@ Users can log in and log out
 Users can reset passwords
 Users create, view, update and delete shopping lists. 
 Users can add, update, view or delete items in a shopping list
-
-##Images of the app##
