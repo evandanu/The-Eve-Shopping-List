@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>The Eve Shopping list</title>
 
@@ -9,21 +11,27 @@
 <body>
 
 <h1><b>The Eve Shopping List</b></h1>
-<div class="login">
-<form action="login.html" method="post" class="form-group">
+<div class="topcorner">
+	<div class="row">
+		<button id="button2" onclick="location.href='view.html';">Home</button>
+        <button id="button2" onclick="location.href='login.html';">Logout</button>
+	</div>
+</div>
+<div class="add">
+<form action="addshopping.html" method="post" class="form-group">
     <div class="form">
         <header class="logo">
-            <img src="images/bag6.png" width="15%" align="center">
             <h2>Add a Shopping List</h2>
         </header>
-        <p>Shopping List details:</p>
+        <h4>Shopping List details:</h4>
     Name:<br>
     <input type="text" class="fields" required="required" name="listname" placeholder="Name of shopping list">
     <br>
     Add Items:<br>
-    <input type="text" class="fields" required="required" name="additems">
+    <input type="text" class="fields" required="required" name="additems" placeholder="Use 'and' to seperate items">
     <br>
-    <input type="submit" class="givebutton" value="Add"><a href="view.html"></a>
+    <br>
+    <input type="submit" class="givebutton" value="Add" id="button1" onclick="location.href='view.html';">
         </div>
 </form>
 </div>

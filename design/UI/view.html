@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>The Eve Shopping List</title>
 </head>
 <body>
 <h1><b>The Eve Shopping List</b></h1>
+<div class="topcorner">
+  <div class="row">
+    <button id="button2" onclick="location.href='view.html';">Home</button>
+        <button id="button2" onclick="location.href='login.html';">Logout</button>
+  </div>
+</div>
 <div class="btn-group2">
 <div class="row">
   <button id="groceries">Groceries
@@ -127,7 +134,7 @@
   <br>
   <br>
   <br>
-  <button id="add"><a href="addshoppinglist.html">Add a shopping list</a></button>
+  <button id="addlist" onclick="location.href='addshoppinglist.html';">Add a shopping list</a></button>
 
 </div>
 <div class="footer"><img src="images/bag6.png">

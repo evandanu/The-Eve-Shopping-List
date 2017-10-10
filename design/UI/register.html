@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>The Eve Shopping list</title>
@@ -9,33 +10,39 @@
 <body>
 
 <h1><b>The Eve Shopping List</b></h1>
+<div class="topcorner">
+    <div class="row">
+        <button id="button2" onclick="location.href='view.html';">Home</button>
+        <button id="button2" onclick="location.href='login.html';">Logout</button>
+    </div>
+</div>
 <div class="register">
 <form action="register.html" method="post" class="form-group">
     <div class="form">
-        <p>Registration details:</p>
-    Fullname:<br>
+        <h4>Registration details</h4>
+    Fullname<br>
     <input type="text" class="fields" required="required" name="fullname" placeholder="Your Fullname">
     <br>
-    Username:<br>
+    Username<br>
     <input type="text" class="fields" required="required" name="username" placeholder="Your Username">
     <br>
-    Email:<br>
+    Email<br>
     <input type="text" class="fields" required="required" name="email" placeholder="Your Email: Someone@Example.com">
     <br>
-    Phone Number:<br>
+    Phone Number<br>
     <input type="text" class="fields" required="required" name="phonenumber" placeholder="Your Phone Number">
     <br>
-    Address:<br>
+    Address<br>
     <input type="text" class="fields" required="required" name="address" placeholder="Your addrress">
     <br>
     Password:<br>
     <input type="password" class="fields" required="required" name="password1">
     <br>
-    Re-enter Password:<br>
+    Re-enter Password<br>
     <input type="password" class="fields" required="required" name="password2">
     <br>
-    <input type="submit" class="givebutton" value="submit">
-        <p><a href="login.html"><button>Login</button></a> If already Registered.</p>
+    <input type="submit" class="givebutton" value="submit" id="button1">
+        <h5><button id="button1" onclick="location.href='login.html';">Login</button> If already Registered</h5>
         </div>
 </form>
 </div>

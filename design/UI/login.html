@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>The Eve Shopping list</title>
@@ -9,18 +10,25 @@
 <body>
 
 <h1><b>The Eve Shopping List</b></h1>
+<div class="topcorner">
+    <div class="row">
+        <button id="button2" onclick="location.href='view.html';">Home</button>
+        <button id="button2" onclick="location.href='login.html';">Logout</button>
+    </div>
+</div>
 <div class="login">
 <form action="login.html" method="post" class="form-group">
     <div class="form">
-        <p>Login details:</p>
+        <h4>Login details:</h4>
     Username:<br>
     <input type="text" class="fields" required="required" name="username" placeholder="Your Username">
     <br>
     Password:<br>
     <input type="password" class="fields" required="required" name="password1">
     <br>
-    <input type="submit" class="givebutton" value="submit">
-        <P><a href="register.html">Register</a> If not a member</P>
+    <br>
+    <input type="submit" class="givebutton" value="submit" id="button1" onclick="location.href='view.html';">
+        <h5><button onclick="location.href='register.html';" id="button1">Register</button> If not a member</h5>
         </div>
 </form>
 </div>
