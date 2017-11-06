@@ -1,8 +1,6 @@
-import os
-from flask import Flask,render_template, session, url_for,request,redirect
-from app import app, views
+import app.views
 
-app= Flask(__name__, static_folder='design/UI')
+app = app.views.app
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

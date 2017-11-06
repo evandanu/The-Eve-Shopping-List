@@ -2,7 +2,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    background-image: url(../images/bag4.jpeg);
+    background-image: url(/images/bag4.jpeg);
     background-repeat: no-repeat;
     background-size: 100% 100vh;
     background-position: relative;
@@ -13,9 +13,9 @@ body {
 }
 
 h1 {
-	text-align: center;
-	font-family: courier;
-	font-size: 80px;
+    text-align: center;
+    font-family: courier;
+    font-size: 80px;
     box-sizing: border-box;
 
 }
@@ -38,16 +38,16 @@ h1 {
 
 
 .btn-group button:hover {
-    background-color: 	#CD853F;
+    background-color:   #CD853F;
 }
 
 .footer{
-	position: fixed;
+    position: fixed;
     bottom: 0;
     right: 0;
 }
 .btn-group2 button {
-	background-color: #ffffff;
+    background-color: #ffffff;
     opacity: .4;
     border: 100px #CD853F; 
     color: black; 
@@ -63,7 +63,7 @@ h1 {
 }
 
 .btn-group2 button:hover {
-    background-color: 	#CD853F;
+    background-color:   #CD853F;
 }
 
 .login{
