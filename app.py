@@ -2,7 +2,8 @@ import os
 
 from flask import Flask, render_template,url_for,redirect,request,session
 
-app= Flask(__name__, static_folder='design/UI')
+app= Flask(__name__)
+app._static_folder = 'design/UI'
 app.secret_key = os.urandom(24)
 
 
@@ -14,7 +15,7 @@ def index():
     return render_template("index.html")
  
 @app.route('/<path:path>')
-def static_folder(path):
+def _static_folder(path):
 	return app.send_static_file(path)
 
 @app.route('/login', methods=['GET', 'POST'])
