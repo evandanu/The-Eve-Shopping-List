@@ -107,9 +107,9 @@ def logout():
 def view():
     return render_template('view.html')
 
-@app.route('/addshopinglist', methods=['GET', 'POST'])
+@app.route('/addshoppinglist', methods=['GET', 'POST'])
 @login_required
-def addshopinglist():
+def addshoppinglist():
     return render_template('addshopinglist.html')
  
 if __name__ == '__main__':

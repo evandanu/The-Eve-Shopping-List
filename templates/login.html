@@ -18,18 +18,18 @@
         <button id="button2" onclick="location.href='/login';">Logout</button>
     </div>
 </div>
-<div class="login">
-<form action="/login" method="POST" class="form-group">
+<div class="form-login">
+<form action="/login" method="POST" class="form-login">
     <div class="form">
         <h4>Login details:</h4>
     Username:<br>
-    <input type="text" class="fields" required="required" name="username" placeholder="Your Username">
+    <input type="text" class="form-control" required="required" name="username" placeholder="Your Username">
     <br>
     Password:<br>
-    <input type="password" class="fields" required="required" name="password" placeholder="Your password">
+    <input type="password" class="form-control" required="required" name="password" placeholder="Your password">
     <br>
     <br>
-    <input type="submit" class="givebutton" value="submit" id="button1" onclick="location.href='view';">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
         <h5><button onclick="location.href='register';" id="button1">Register</button> If not a member</h5>
         </div>
 </form>
