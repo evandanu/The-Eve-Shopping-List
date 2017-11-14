@@ -14,12 +14,12 @@
 <h1><b>The Eve Shopping List</b></h1>
 <div class="topcorner">
     <div class="row">
-        <button id="button2" onclick="location.href='index';">Home</button>
-        <button id="button2" onclick="location.href='logout';">Logout</button>
+        <button id="button2" onclick="location.href='/';">Home</button>
+        <button id="button2" onclick="location.href='/login';">Logout</button>
     </div>
 </div>
 <div class="register">
-<form action="register.html" method="post" class="form-group">
+<form action="/register" method="POST" class="form-group">
     <div class="form">
         <h4>Registration details</h4>
     Fullname<br>
@@ -38,10 +38,10 @@
     <input type="text" class="fields" required="required" name="address" placeholder="Your addrress">
     <br>
     Password:<br>
-    <input type="password" class="fields" required="required" name="password1">
+    <input type="password" class="fields" required="required" name="password">
     <br>
     Re-enter Password<br>
-    <input type="password" class="fields" required="required" name="password2">
+    <input type="password" class="fields" required="required" name="password1">
     <br>
     <input type="submit" class="givebutton" value="submit" id="button1">
         <h5><button id="button1" onclick="location.href='login';">Login</button> If already Registered</h5>
