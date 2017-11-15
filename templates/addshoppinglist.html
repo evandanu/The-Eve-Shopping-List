@@ -19,6 +19,22 @@
         <button id="button2" onclick="location.href='/login';">Logout</button>
 	</div>
 </div>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+
+{% if error %}
+<p><strong>Error:</strong> {{ error }}
+{% endif %}
+
 <div class="add">
 <form action="/addshoppinglist" method="post" class="form-group">
     <div class="form">

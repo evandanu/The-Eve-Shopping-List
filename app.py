@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, url_for, redirect, request, session, flash, send_from_directory
+from flask import Flask, flash, render_template, url_for, redirect, request, session, send_from_directory
 from .models.item import Item
 from .models.shoppinglist import Shoppinglist
 from .models.user import User
@@ -15,6 +15,7 @@ app.debug = True
 app.users = {}
 app.usernames = []
 app.shoppinglist = {}
+id = 0
 
 def login_required(f):
     @wraps(f)
@@ -27,9 +28,29 @@ def login_required(f):
     return wrap
 
 def get_id_for_username(username):
+    print (username)
     for user in app.users:
         if app.users[user].username == username:
             return app.users[user].id
+
+def add_shoppinglist():
+
+    return
+
+def delete_shoppinglist():
+    return
+
+def edit_shoppinglist():
+    return
+
+def add_item():
+    return
+
+def delete_item():
+    return
+
+def edit_item():
+    return
             
         
 
@@ -47,16 +68,19 @@ def favicon():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    error = None 
+    error = None
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
         if username not in app.usernames:
-            error = 'You do not have an account, please register.'
+            error = 'You do not have an account, please register!'
         else:
             user_id = get_id_for_username(username)
+            print (user_id)
+            print (app.users)
             if app.users[user_id].password != password:
-                error = 'Wrong password, please try again'
+                error = 'Wrong password, please try again!'
             else:
                 session['logged_in']=True
                 session['username']= username
@@ -68,6 +92,7 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     error = None
+
     if request.method == 'POST':
         fullname = request.form['fullname'].lower()
         username = request.form['username'].lower()
@@ -78,8 +103,11 @@ def register():
         password1 = request.form['password1'].lower()
 
         if username not in app.usernames:
+            
             if password == password1:
-                new_user = User(fullname, username, email, phonenumber, address, password1)
+                global id
+                id += 1
+                new_user = User(id, fullname, username, email, phonenumber, address, password)
                 app.users[new_user.id] = new_user
                 app.usernames.append(username)
                 session['logged_in'] = True
@@ -110,7 +138,7 @@ def view():
 @app.route('/addshoppinglist', methods=['GET', 'POST'])
 @login_required
 def addshoppinglist():
-    return render_template('addshopinglist.html')
+    return render_template('addshoppinglist.html')
  
 if __name__ == '__main__':
 	app.run()
