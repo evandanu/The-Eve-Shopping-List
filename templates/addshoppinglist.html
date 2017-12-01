@@ -20,21 +20,6 @@
 	</div>
 </div>
 
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul class=flashes>
-    {% for message in messages %}
-      <li>{{ message }}</li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
-{% block body %}{% endblock %}
-
-{% if error %}
-<p><strong>Error:</strong> {{ error }}
-{% endif %}
-
 <div class="add">
 <form action="/addshoppinglist" method="post" class="form-group">
     <div class="form">
@@ -43,13 +28,10 @@
         </header>
         <h4>Shopping List details:</h4>
     Name:<br>
-    <input type="text" class="fields" required="required" name="listname" placeholder="Name of shopping list">
+    <label for="shoppinglists" class="sr-only">Shoppinglist</label>
+    <input type="text" id="shoppinglist" name="name" class="form-control" placeholder="shoppinglist">
     <br>
-    Add Items:<br>
-    <input type="text" class="fields" required="required" name="additems" placeholder="Use 'and' to seperate items">
-    <br>
-    <br>
-    <input type="submit" class="givebutton" value="Add" id="button1" onclick="location.href='view';">
+    <input type="submit" class="givebutton" value="Add" id="button1" onclick="location.href='shoppinglists';">
         </div>
 </form>
 </div>

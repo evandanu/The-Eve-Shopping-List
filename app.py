@@ -14,7 +14,7 @@ app.debug = True
 
 app.users = {}
 app.usernames = []
-app.shoppinglist = {}
+app.shoppinglists = {}
 id = 0
 
 def login_required(f):
@@ -33,9 +33,14 @@ def get_id_for_username(username):
         if app.users[user].username == username:
             return app.users[user].id
 
-def add_shoppinglist():
+def add_shoppinglist(id, name, user_id):
+    new_shoppinglist = Shoppinglist(id, name, user_id)
+    if user_id not in app.shoppinglists:
+        app.shoppinglists[user_id] = {new_shoppinglist.id: new_shoppinglist}
+    else:
+        app.shoppinglists[user_id][new_shoppinglist.id] = new_shoppinglist
+    return True
 
-    return
 
 def delete_shoppinglist():
     return
@@ -86,7 +91,7 @@ def login():
                 session['username']= username
                 session['id']=user_id
                 flash ('You are logged in.')
-                return redirect(url_for('view'))
+                return redirect(url_for('shoppinglists'))
     return render_template('login.html', error=error)
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -114,7 +119,7 @@ def register():
                 session['username'] = username
                 session['id'] = new_user.id
                 flash ('You are now registered and logged in.')
-                return redirect(url_for('view'))
+                return redirect(url_for('shoppinglists'))
             else:
                 error = 'Passwords do not match'
         else:
@@ -130,15 +135,28 @@ def logout():
     return redirect(url_for('index'))
    
 
-@app.route('/view', methods=['GET', 'POST'])
+@app.route('/shoppinglists', methods=['GET', 'POST'])
 @login_required
-def view():
-    return render_template('view.html')
+def shoppinglists():
+   
+    shoppinglists = None if session['id'] not in app.shoppinglists else app.shoppinglists[session['id']]
+    print(shoppinglists)
+    return render_template('shoppinglists.html', shoppinglists=shoppinglists)
 
 @app.route('/addshoppinglist', methods=['GET', 'POST'])
 @login_required
 def addshoppinglist():
+    if request.method == 'POST':
+        global id
+        id += 1
+
+        shoppinglist = request.form['name']
+        user_id = session['id']
+        add_shoppinglist(id, shoppinglist, user_id)
+        flash(shoppinglist + ' has been added successful.')
+        return redirect(url_for('shoppinglists'))
     return render_template('addshoppinglist.html')
- 
+
+
 if __name__ == '__main__':
 	app.run()

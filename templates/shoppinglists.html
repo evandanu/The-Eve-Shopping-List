@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>The Eve Shopping List</title>
+</head>
+<body>
+<h1><b>The Eve Shopping List</b></h1>
+<div class="topcorner">
+  <div class="row">
+    <button id="button2" onclick="location.href='/';">Home</button>
+        <button id="button2" onclick="location.href='/login';">Logout</button>
+  </div>
+</div>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+<button id="addlist" onclick="location.href='addshoppinglist';">Add a shopping list</a></button>
+
+<div class="btn-group2">
+<div class="row">
+
+{% if shoppinglists %}
+{% for shoppinglist in shoppinglists %}
+<div class="col-md-4">
+  <div class="card-container">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="text-center">
+            <h4><b>{{ shoppinglists[shoppinglist].name }}</b></h4>
+            </div>
+             <hr/>
+             <div class="pull-right btn-group btn-group-xs" role="group">
+             <a type="button" class="btn btn-default" href="/add_item/{{shoppinglists[shoppinglist].id}}">Add item</a>
+             <a type="button" class="btn btn-info" href="/edit_shoppinglist/{{shoppinglists[shoppinglist].id}}">Edit shoppinglist</a>
+             <a type="button" class="btn btn-danger" href="/delete_shoppinglist/{{shoppinglists[shoppinglist].id}}">Delete shoppinglist</a>
+             </div>
+          </div>
+        </div>
+      </div>
+
+
+
+              <div class="card-body">
+               {% if shoppinglists[shoppinglist].items %}
+                <ul class="list-group">
+                {% for item in shoppinglists[shoppinglist].items %}
+                <a href="/show_item/{{ shoppinglists[shoppinglist].id }}/{{ shoppinglists[shoppinglist].items[item].id }}">
+                <li class="list-group-item">
+                <div class="margin-ten">
+                {{ shoppinglists[shoppinglist].items[item].name }}<br>
+                <small>{{ shoppinglists[shoppinglist].items[item].date }}</small>
+                <div class="pull-right">
+                <a href="/edit_item/{{ shoppinglists[shoppinglist].id }}/{{ shoppinglists[shoppinglist].items[item].id }}" class="btn btn-info btn-xs">edit</a>
+                <a href="/delete_item/{{ shoppinglists[shoppinglist].id }}/{{ shoppinglists[shoppinglist].items[item].id }}" class="btn btn-danger btn-xs">Delete</a>
+                </div>
+                </div>
+                </li>
+                </a>
+                {% endfor %}
+                </ul>
+                {% else %}
+                <h4>No items are added.</h4>
+                {% endif %}
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h1>No item added</h1>
+        {% endif %}
+    </div>
+</div>
+
+
+
+
+<div class="footer"><img src="images/bag6.png">
+</div>
+</html>
+</body>
